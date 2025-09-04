@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloatChat - Ocean Data Discovery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-water"></i>
+                <h1>FloatChat</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Data Catalog</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="main-content">
+            <div class="chat-section">
+                <div class="chat-header">
+                    <h2><i class="fas fa-comments"></i> Chat with OceanAI</h2>
+                </div>
+                
+                <div class="chat-messages">
+                    <div class="message ai-message">
+                        <p>Hello! I'm your ocean data assistant. How can I help you explore ARGO data today?</p>
+                        <div class="timestamp">10:00 AM</div>
+                    </div>
+                    
+                    <div class="message user-message">
+                        <p>Show me salinity profiles near the equator in March 2023</p>
+                        <div class="timestamp">10:02 AM</div>
+                    </div>
+                    
+                    <div class="message ai-message">
+                        <p>I found 47 ARGO floats near the equator during March 2023. Here are the salinity profiles at different depths:</p>
+                        <div class="timestamp">10:02 AM</div>
+                    </div>
+                    
+                    <div class="message user-message">
+                        <p>Compare temperature at 100m depth between Pacific and Indian Oceans</p>
+                        <div class="timestamp">10:04 AM</div>
+                    </div>
+                </div>
+                
+                <div class="suggested-queries">
+                    <div class="query-pill">Show floats near Hawaii</div>
+                    <div class="query-pill">Salinity trends last 6 months</div>
+                    <div class="query-pill">Temperature at 200m depth</div>
+                    <div class="query-pill">Compare BGC parameters</div>
+                </div>
+                
+                <div class="chat-input">
+                    <input type="text" placeholder="Ask about ocean data...">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+            
+            <div class="visualization-section">
+                <div class="viz-header">
+                    <h2><i class="fas fa-map-marked-alt"></i> Data Visualization</h2>
+                    <div class="viz-tools">
+                        <button><i class="fas fa-download"></i> Export</button>
+                        <button><i class="fas fa-layer-group"></i> Layers</button>
+                        <button><i class="fas fa-sliders-h"></i> Filters</button>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <div class="map">
+                        <div class="data-points">
+                            <div class="data-point" style="top: 50%; left: 50%;"></div>
+                            <div class="data-point"></div>
+                            <div class="data-point"></div>
+                            <div class="data-point"></div>
+                            <div class="data-point"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="graphs-container">
+                    <div class="graph">
+                        <div class="graph-header">
+                            <div class="graph-title">Salinity Profile</div>
+                            <div class="graph-options">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </div>
+                        </div>
+                        <div class="graph-content">
+                            <div class="graph-line"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="graph">
+                        <div class="graph-header">
+                            <div class="graph-title">Temperature Over Time</div>
+                            <div class="graph-options">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </div>
+                        </div>
+                        <div class="graph-content">
+                            <div class="graph-line" id="temperature-graph"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="graph">
+                        <div class="graph-header">
+                            <div class="graph-title">Depth Comparison</div>
+                            <div class="graph-options">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </div>
+                        </div>
+                        <div class="graph-content">
+                            <div class="graph-line" id="depth-graph"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="copyright">
+                &copy; 2023 FloatChat - ARGO Ocean Data Discovery
+            </div>
+            <div class="data-sources">
+                <span>Data Source: ARGO Program</span>
+                <span>Format: NetCDF</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
