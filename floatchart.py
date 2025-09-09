@@ -15,95 +15,14 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS
-st.markdown("""
-<style>
-    .main {
-        background: linear-gradient(135deg, #0a192f 0%, #1a3a4a 100%);
-        color: #e0f7fa;
-    }
-    
-    .stApp {
-        background: linear-gradient(135deg, #0a192f 0%, #1a3a4a 100%);
-    }
-    
-    .chat-message {
-        padding: 1rem;
-        border-radius: 0.5rem;
-        margin-bottom: 1rem;
-        display: flex;
-        flex-direction: column;
-        max-width: 85%;
-    }
-    
-    .chat-message.user {
-        background-color: rgba(72, 202, 228, 0.2);
-        margin-left: auto;
-        border-bottom-right-radius: 0.2rem;
-    }
-    
-    .chat-message.assistant {
-        background-color: rgba(0, 119, 182, 0.3);
-        margin-right: auto;
-        border-bottom-left-radius: 0.2rem;
-    }
-    
-    .timestamp {
-        font-size: 0.7rem;
-        color: #90e0ef;
-        text-align: right;
-        margin-top: 0.5rem;
-    }
-    
-    .query-pill {
-        background-color: rgba(72, 202, 228, 0.15);
-        color: #90e0ef;
-        padding: 0.5rem 1rem;
-        border-radius: 1.2rem;
-        font-size: 0.9rem;
-        margin: 0.3rem;
-        display: inline-block;
-        cursor: pointer;
-    }
-    
-    .query-pill:hover {
-        background-color: rgba(72, 202, 228, 0.25);
-    }
-    
-    .header {
-        background-color: rgba(9, 35, 55, 0.95);
-        padding: 1rem;
-        border-bottom: 1px solid rgba(72, 202, 228, 0.3);
-    }
-    
-    .footer {
-        background-color: rgba(9, 35, 55, 0.95);
-        padding: 0.8rem;
-        border-top: 1px solid rgba(72, 202, 228, 0.3);
-        font-size: 0.8rem;
-        color: #90e0ef;
-    }
-    
-    .map-container {
-        background-color: rgba(9, 35, 55, 0.4);
-        border-radius: 0.6rem;
-        padding: 1rem;
-        height: 400px;
-    }
-    
-    .graph-container {
-        background-color: rgba(9, 35, 55, 0.4);
-        border-radius: 0.6rem;
-        padding: 1rem;
-        height: 250px;
-    }
-    
-    /* Hide Streamlit branding */
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
-</style>
-""", unsafe_allow_html=True)
+
+# Load CSS file
+with open("style.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+st.markdown('<p class="title">Hello with External CSS</p>', unsafe_allow_html=True)
+st.button("Styled Button")
+
 
 # Initialize session state for chat messages
 if "messages" not in st.session_state:
@@ -374,10 +293,4 @@ with tab3:
     st.markdown("### Data Preview")
     st.dataframe(sample_data, use_container_width=True)
 
-# Footer
-st.markdown('<div class="footer">'
-            '<div style="display: flex; justify-content: space-between;">'
-            '<div>© 2023 FloatChat - ARGO Ocean Data Discovery</div>'
-            '<div>Data Source: ARGO Program | Format: NetCDF</div>'
-            '</div>'
-            '</div>', unsafe_allow_html=True)
+
